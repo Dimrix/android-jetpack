@@ -1,4 +1,4 @@
-# Android Jetpack Demo  [![CircleCI](https://circleci.com/gh/jumaallan/android-jetpack.svg?style=shield)](https://circleci.com/gh/jumaallan/android-jetpack)
+# Android Jetpack Demo  [![CircleCI](https://circleci.com/gh/jumaallan/android-jetpack.svg?style=shield)](https://circleci.com/gh/jumaallan/android-jetpack)  [![Maintainability](https://api.codeclimate.com/v1/badges/7e56a019e6fede24b212/maintainability)](https://codeclimate.com/github/jumaallan/android-jetpack/maintainability)  [![Test Coverage](https://api.codeclimate.com/v1/badges/7e56a019e6fede24b212/test_coverage)](https://codeclimate.com/github/jumaallan/android-jetpack/test_coverage)
 
 This is a sample repo to show how to use the Android Jetpack announced in the Google I/O 2018 for android254 Meetup, at iHub Nairobi.
 
