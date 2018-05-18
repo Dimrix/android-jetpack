@@ -16,13 +16,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    //Added Java 8 Support
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation deps.support.appcompat;
-    implementation deps.support.constraintLayout;
+    implementation deps.support.appcompat
+    implementation deps.support.constraintLayout
+
+    //Butterknife - View Binding Support
+    implementation deps.butterknife.core
+    implementation deps.butterknife.annotationProcessor
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

@@ -1,13 +1,18 @@
 def versions = [
         supportLib      : '27.1.1',
         constraintLayout: '1.1.0',
+        butterknife     : '8.8.1',
 ]
 
 ext.versions = versions
 
 ext.deps = [
-        support: [
+        support    : [
                 appcompat       : 'com.android.support:appcompat-v7:' + versions.supportLib,
                 constraintLayout: 'com.android.support.constraint:constraint-layout:' + versions.constraintLayout,
+        ],
+        butterknife: [
+                core               : 'com.jakewharton:butterknife:' + versions.butterknife,
+                annotationProcessor: 'com.jakewharton:butterknife-compiler:' + versions.butterknife,
         ]
 ]
