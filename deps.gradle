@@ -2,6 +2,7 @@ def versions = [
         supportLib      : '27.1.1',
         constraintLayout: '1.1.0',
         butterknife     : '8.8.1',
+        timber          : '4.6.0',
 ]
 
 ext.versions = versions
@@ -14,5 +15,6 @@ ext.deps = [
         butterknife: [
                 core               : 'com.jakewharton:butterknife:' + versions.butterknife,
                 annotationProcessor: 'com.jakewharton:butterknife-compiler:' + versions.butterknife,
-        ]
+        ],
+        timber     : 'com.jakewharton.timber:timber:' + versions.timber,
 ]
