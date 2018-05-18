@@ -3,6 +3,8 @@ def versions = [
         constraintLayout: '1.1.0',
         butterknife     : '8.8.1',
         timber          : '4.6.0',
+        room                : '1.0.0',
+        roomExtensions      : '1.1.0',
 ]
 
 ext.versions = versions
@@ -15,6 +17,11 @@ ext.deps = [
         butterknife: [
                 core               : 'com.jakewharton:butterknife:' + versions.butterknife,
                 annotationProcessor: 'com.jakewharton:butterknife-compiler:' + versions.butterknife,
+        ],
+        room                : [
+                core               : 'android.arch.persistence.room:runtime:' + versions.room,
+                compiler           : 'android.arch.persistence.room:compiler:' + versions.room,
+                lifecycleExtensions: 'android.arch.lifecycle:extensions:' + versions.roomExtensions,
         ],
         timber     : 'com.jakewharton.timber:timber:' + versions.timber,
 ]
