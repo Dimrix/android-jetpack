@@ -22,6 +22,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    //TODO 1 :: ADD DATA BINDING SUPPORT
     //Added Data Binding Support
     dataBinding {
         enabled = true
@@ -33,11 +34,15 @@ dependencies {
 
     implementation deps.support.appcompat
     implementation deps.support.constraintLayout
+    implementation deps.support.cardview
+    implementation deps.support.recyclerview
+    implementation deps.support.design
 
     //Butterknife - View Binding Support
     implementation deps.butterknife.core
     annotationProcessor deps.butterknife.annotationProcessor
 
+    //TODO 2 :: ADD ROOM & LIFECYCLE EXTENSIONS
     //Room, LiveData and ViewModel
     implementation deps.room.core
     annotationProcessor deps.room.compiler

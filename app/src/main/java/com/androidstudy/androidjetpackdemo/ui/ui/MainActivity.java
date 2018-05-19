@@ -1,11 +1,11 @@
 package com.androidstudy.androidjetpackdemo.ui.ui;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.androidstudy.androidjetpackdemo.R;
-import com.androidstudy.androidjetpackdemo.ui.base.BaseActivity;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

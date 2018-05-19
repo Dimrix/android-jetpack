@@ -8,7 +8,7 @@ The app uses the **MVVM Architecture**. I have used the following components for
 * LiveData - Handle data in a lifecycle-aware fashion 
 * ViewModel - Manage your UI's data in a lifecycle-aware fashion
 * DataBinding -  minimize the glue code necessary to bind your application logic and layouts.
-* Java 8 support - lambda's 
+* Java 8 support - added lambda support
 
 ## Prerequisites
 You will need the following to run this project:
