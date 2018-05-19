@@ -1,6 +1,6 @@
 # Android Jetpack Demo  [![CircleCI](https://circleci.com/gh/jumaallan/android-jetpack.svg?style=shield)](https://circleci.com/gh/jumaallan/android-jetpack)  [![Maintainability](https://api.codeclimate.com/v1/badges/7e56a019e6fede24b212/maintainability)](https://codeclimate.com/github/jumaallan/android-jetpack/maintainability)  [![Test Coverage](https://api.codeclimate.com/v1/badges/7e56a019e6fede24b212/test_coverage)](https://codeclimate.com/github/jumaallan/android-jetpack/test_coverage)
 
-This is a sample repo to show how to use the Android Jetpack announced in the Google I/O 2018 for android254 Meetup, at iHub Nairobi.
+This is a sample repo to show how to use the Android Jetpack announced in the Google I/O 2018 for android254 Meetup, at iHub Nairobi. :rocket:
 
 The app uses the **MVVM Architecture**. I have used the following components for development:
 
@@ -8,6 +8,7 @@ The app uses the **MVVM Architecture**. I have used the following components for
 * LiveData - Handle data in a lifecycle-aware fashion 
 * ViewModel - Manage your UI's data in a lifecycle-aware fashion
 * DataBinding -  minimize the glue code necessary to bind your application logic and layouts.
+* Java 8 support - lambda's 
 
 ## Prerequisites
 You will need the following to run this project:
@@ -17,3 +18,9 @@ You will need the following to run this project:
 ## Setting Up
 * Clone the Repository from Github
 * Open the project folder using Android Studio IDE
+
+## Presentation Link
+The presentation can be found here :
+
+https://goo.gl/zAwVrw 
+
