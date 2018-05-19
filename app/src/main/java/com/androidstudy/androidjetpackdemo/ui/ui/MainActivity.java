@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.androidstudy.androidjetpackdemo.R;
 import com.androidstudy.androidjetpackdemo.data.model.User;
@@ -15,7 +17,19 @@ import com.androidstudy.androidjetpackdemo.ui.viewmodel.MainViewModel;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
+
+    @BindView(R.id.firstName)
+    EditText etfirstName;
+    @BindView(R.id.lastName)
+    EditText etlastName;
+    @BindView(R.id.age)
+    EditText etAge;
+    @BindView(R.id.saveUser)
+    Button saveUser;
 
     MainViewModel mainViewModel;
     private List<User> userList;
@@ -26,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        ButterKnife.bind(this);
+
         activityMainBinding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         activityMainBinding.recyclerView.addItemDecoration(
                 new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
@@ -38,14 +55,38 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        saveUser();
+        //Save a new User
+        saveUser.setOnClickListener(v -> {
+            String firstName = etfirstName.getText().toString().trim();
+            String lastName = etlastName.getText().toString().trim();
+            String age = etAge.getText().toString().trim();
+
+            if (firstName.isEmpty()) {
+                etfirstName.setError("Please Enter First Name");
+                return;
+            }
+
+            if (lastName.isEmpty()) {
+                etlastName.setError("Please Enter Last Name");
+                return;
+            }
+
+            if (age.isEmpty()) {
+                etAge.setError("Please Enter Your Age");
+                return;
+            }
+
+            saveUser(firstName, lastName, age);
+
+        });
+
     }
 
-    private void saveUser() {
+    private void saveUser(String firstName, String lastName, String age) {
         mainViewModel.addUser(new User(
-                "Juma",
-                "Allan",
-                "27"
+                firstName,
+                lastName,
+                age
         ));
     }
 
