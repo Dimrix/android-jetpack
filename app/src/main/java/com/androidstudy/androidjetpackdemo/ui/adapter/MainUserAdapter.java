@@ -1,60 +1,58 @@
 package com.androidstudy.androidjetpackdemo.ui.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.androidstudy.androidjetpackdemo.R;
 import com.androidstudy.androidjetpackdemo.data.model.User;
+import com.androidstudy.androidjetpackdemo.databinding.RowUserBinding;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import timber.log.Timber;
 
-public class MainUserAdapter extends RecyclerView.Adapter<MainUserAdapter.UserHolder> {
+public class MainUserAdapter extends RecyclerView.Adapter<MainUserAdapter.ViewHolder> {
 
-    private Context context;
     private List<User> userList;
+    private Context context;
 
-    public MainUserAdapter(Context context, List<User> userList) {
-        this.context = context;
+    public MainUserAdapter(List<User> userList, Context context) {
         this.userList = userList;
-    }
-
-    @NonNull
-    @Override
-    public UserHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.row_user, parent, false);
-        final UserHolder mViewHolder = new UserHolder(itemView);
-        return mViewHolder;
+        this.context = context;
     }
 
     @Override
-    public void onBindViewHolder(UserHolder holder, int position) {
+    public MainUserAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+                                                         int viewType) {
+        RowUserBinding binding = DataBindingUtil.inflate(
+                LayoutInflater.from(parent.getContext()),
+                R.layout.row_user, parent, false);
+
+        ViewHolder viewHolder = new ViewHolder(binding);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
         User user = userList.get(position);
-
-
+        holder.rowUserBinding.setUser(user);
     }
 
     @Override
     public int getItemCount() {
+        Timber.d("Users are : " + userList.size());
         return userList.size();
     }
 
-    class UserHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
+        RowUserBinding rowUserBinding;
 
-        UserHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
+        ViewHolder(RowUserBinding rowUserBinding) {
+            super(rowUserBinding.getRoot());
+            this.rowUserBinding = rowUserBinding;
         }
     }
 }
-
