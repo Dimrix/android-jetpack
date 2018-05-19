@@ -1,9 +1,9 @@
 package com.androidstudy.androidjetpackdemo.data.model;
 
-import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-@Dao
+@Entity
 public class User {
     @PrimaryKey(autoGenerate = true)
     private long id;
